@@ -23,10 +23,10 @@ tarball: clean
 	mkdir -p $(PACKAGE_NAME)
 
 	mkdir -p $(PACKAGE_NAME)/dist
-	cp -p dist/amazon-efs-mount-watchdog.conf $(PACKAGE_NAME)/dist
-	cp -p dist/amazon-efs-mount-watchdog.service $(PACKAGE_NAME)/dist
-	cp -p dist/efs-utils.conf $(PACKAGE_NAME)/dist
-	cp -p dist/efs-utils.crt $(PACKAGE_NAME)/dist
+	cp -p /usr/rtc/app/efs-utils/dist/amazon-efs-mount-watchdog.conf $(PACKAGE_NAME)/dist
+	cp -p /usr/rtc/app/efs-utils/dist/amazon-efs-mount-watchdog.service $(PACKAGE_NAME)/dist
+	cp -p /usr/rtc/app/efs-utils/dist/efs-utils.conf $(PACKAGE_NAME)/dist
+	cp -p /usr/rtc/app/efs-utils/dist/efs-utils.crt $(PACKAGE_NAME)/dist
 
 	mkdir -p $(PACKAGE_NAME)/src
 	cp -rp src/mount_efs $(PACKAGE_NAME)/src
