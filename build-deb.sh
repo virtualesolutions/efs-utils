@@ -29,26 +29,26 @@ mkdir -p ${BUILD_ROOT}/var/log/amazon/efs
 mkdir -p ${BUILD_ROOT}/usr/share/man/man8
 
 echo 'Copying application files'
-install -p -m 644 /usr/rtc/app/efs-utils/dist/amazon-efs-mount-watchdog.conf ${BUILD_ROOT}/etc/init
-install -p -m 644 /usr/rtc/app/efs-utils/dist/amazon-efs-mount-watchdog.service ${BUILD_ROOT}/etc/systemd/system
-install -p -m 444 /usr/rtc/app/efs-utils/dist/efs-utils.crt ${BUILD_ROOT}/etc/amazon/efs
-install -p -m 644 /usr/rtc/app/efs-utils/dist/efs-utils.conf ${BUILD_ROOT}/etc/amazon/efs
-install -p -m 755 /usr/rtc/app/efs-utils/src/mount_efs/__init__.py ${BUILD_ROOT}/sbin/mount.efs
-install -p -m 755 /usr/rtc/app/efs-utils/src/watchdog/__init__.py ${BUILD_ROOT}/usr/bin/amazon-efs-mount-watchdog
+install -p -m 644 /opt/efs-utils/dist/amazon-efs-mount-watchdog.conf ${BUILD_ROOT}/etc/init
+install -p -m 644 /opt/efs-utils/dist/amazon-efs-mount-watchdog.service ${BUILD_ROOT}/etc/systemd/system
+install -p -m 444 /opt/efs-utils/dist/efs-utils.crt ${BUILD_ROOT}/etc/amazon/efs
+install -p -m 644 /opt/efs-utils/dist/efs-utils.conf ${BUILD_ROOT}/etc/amazon/efs
+install -p -m 755 /opt/efs-utils/src/mount_efs/__init__.py ${BUILD_ROOT}/sbin/mount.efs
+install -p -m 755 /opt/efs-utils/src/watchdog/__init__.py ${BUILD_ROOT}/usr/bin/amazon-efs-mount-watchdog
 
 echo 'Copying install scripts'
-install -p -m 755 /usr/rtc/app/efs-utils/dist/scriptlets/after-install-upgrade ${BUILD_ROOT}/postinst
-install -p -m 755 /usr/rtc/app/efs-utils/dist/scriptlets/before-remove ${BUILD_ROOT}/prerm
-install -p -m 755 /usr/rtc/app/efs-utils/dist/scriptlets/after-remove ${BUILD_ROOT}/postrm
+install -p -m 755 /opt/efs-utils/dist/scriptlets/after-install-upgrade ${BUILD_ROOT}/postinst
+install -p -m 755 /opt/efs-utils/dist/scriptlets/before-remove ${BUILD_ROOT}/prerm
+install -p -m 755 /opt/efs-utils/dist/scriptlets/after-remove ${BUILD_ROOT}/postrm
 
 echo 'Copying control file'
-install -p -m 644 /usr/rtc/app/efs-utils/dist/amazon-efs-utils.control ${BUILD_ROOT}/control
+install -p -m 644 /opt/efs-utils/dist/amazon-efs-utils.control ${BUILD_ROOT}/control
 
 echo 'Copying conffiles'
-install -p -m 644 /usr/rtc/app/efs-utils/dist/amazon-efs-utils.conffiles ${BUILD_ROOT}/conffiles
+install -p -m 644 /opt/efs-utils/dist/amazon-efs-utils.conffiles ${BUILD_ROOT}/conffiles
 
 echo 'Copying manpages'
-install -p -m 644 /usr/rtc/app/efs-utils/man/mount.efs.8 ${BUILD_ROOT}/usr/share/man/man8/mount.efs.8
+install -p -m 644 /opt/efs-utils/man/mount.efs.8 ${BUILD_ROOT}/usr/share/man/man8/mount.efs.8
 
 echo 'Creating deb binary file'
 echo '2.0'> ${BUILD_ROOT}/debian-binary
