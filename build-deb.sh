@@ -58,8 +58,8 @@ find ${BUILD_ROOT} -type d | xargs chmod 755;
 
 echo 'Creating tar'
 cd ${BUILD_ROOT}
-tar czf control.tar.gz control conffiles postinst prerm postrm --owner=0 --group=0
-tar czf data.tar.gz etc sbin usr var --owner=0 --group=0
+tar czf control.tar.gz control conffiles postinst prerm postrm -o 0 -g 0
+tar czf data.tar.gz etc sbin usr var -o 0 -g 0
 cd ${BASE_DIR}
 
 echo 'Building deb'
